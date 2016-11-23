@@ -15,10 +15,10 @@ navbar:
           href: embed.html
         - text: "Embed an infographic"
           href: info.html 
-    - text: "Another Menu"      
+    - text: "Publish to Github"      
       menu: 
-        - text: "submenu item"
-          href: yourfile.html
+        - text: "publish"
+          href: publish.html
         - text: "submenu item"
           href: yourfile.html
 output_dir: "."
