@@ -1,0 +1,20 @@
+---
+title: "Create your rmarkdown website"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Got to Build > Configure Build Tools. In Project Build Tools choose `Website` in the Menu. Press OK. 
+
+2. Copy and paste the the following line of code into the console and press ENTER to build the website. 
+
+```{r eval=FALSE}
+rmarkdown::render_site()
+```
+
+To edit the website open the file called `_site.yml`
+
+

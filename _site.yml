@@ -1,0 +1,24 @@
+name: "Create a simple Rmarkdown website"
+output:
+  html_document:
+    theme: cosmo
+    #highlight: textmate
+navbar:
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Read Me"
+      menu: 
+        - text: "Include Images"
+          href: images.html
+        - text: "Embed a webpage"
+          href: embed.html
+        - text: "Embed an infographic"
+          href: info.html 
+    - text: "Another Menu"      
+      menu: 
+        - text: "submenu item"
+          href: yourfile.html
+        - text: "submenu item"
+          href: yourfile.html
+output_dir: "."

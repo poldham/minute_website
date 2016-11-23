@@ -1,0 +1,14 @@
+---
+title: "Embed a Webpage with an iframe"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here is an example of embedding a web page. In this case it is a Tableau workbook. You may want to adjust the width and height. This will work but will not be visible until you view it in a browser (and may take some time to load).
+
+When embedding Tableau you may want to play with the size of the workbook itself. Review knitr options. For ebooks with bookdown see [here](https://bookdown.org/yihui/bookdown/web-pages-and-shiny-apps.html)
+
+<iframe align = "center" width = "1000" height = "1000" src="http://public.tableau.com/profile/poldham#!/vizhome/drones_2/Histria1"/>
