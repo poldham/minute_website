@@ -14,7 +14,9 @@ navbar:
         - text: "Embed a webpage"
           href: embed.html
         - text: "Embed an infographic"
-          href: info.html 
+          href: info.html
+    - text: "Tableau Session"
+      href: tableau.html
     - text: "Publish to Github"      
       menu: 
         - text: "publish"
