@@ -1,0 +1,38 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Files for Tableau
+
+Pendrive -> DATASETS -> DRONES -> DRONES_FULLTEXT -> 
+
+Vantage point file - 
+
+drone_drones_fulltext_families_5884.vpt
+
+
+### CORE DATASET (cleaned up)
+1. drones_fulltext_cleaned_5884.csv
+
+### Subsidiary datasets (split files from 1)
+
+2. drones_country_totals_fulltext.csv
+3. drones_inventors_count_fulltext.csv
+4. drones_ipc_short_count_fulltext.csv
+5. drones_organisations_count_fulltext.csv
+6. drones_phrases_fulltext.csv
+
+
+
+
+
+
+
+
+
+
+
