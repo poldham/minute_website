@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Paul Oldham" />
 
+<meta name="date" content="2016-11-25" />
 
-<title>Embed an Infographic</title>
+<title>mypage</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -231,13 +233,38 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Embed an Infographic</h1>
+<h1 class="title toc-ignore">mypage</h1>
+<h4 class="author"><em>Paul Oldham</em></h4>
+<h4 class="date"><em>25 November 2016</em></h4>
 
 </div>
 
 
-<p>We have been using <a href="https://infogr.am/">infogr.am</a> to create an infographic on drones that can be freely shared. The procedure is the same as for embedding a web page but you may need to work on the settings for the width and the height in the code below. In the rmarkdown replace the url with the url for your infographic and then adjust the width and the height.</p>
-<iframe align = "center" width = "1000" height = "1000" src="https://infogr.am/1e56252f-7463-4ff2-93bf-37955f73f9b3"/>
+<div id="this-is-my-big-heading" class="section level1">
+<h1>This is my big heading</h1>
+<div id="this-is-my-medium-heading" class="section level2">
+<h2>This is my medium heading</h2>
+<div id="this-is-my-small-heading" class="section level3">
+<h3>This is my small heading</h3>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="mypage_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+</div>
 
 
 
