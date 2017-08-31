@@ -24,7 +24,7 @@ To inserta code chunk use `Ctrl Alt I` on Windows or `Cmd I` on a Mac.
 
 In the code chunk heading we could specify the width of a figure as percentages and we might also want to centre the figure ```{r out.width = "50%", fig.align = "center"}```. We would then include a call to `knitr::include_graphics()` with our image address in quotes as below. Note that the knitr documentation specifies that you may need to `install.packages("png")` and `install.packages("jpeg")` for automatic calculation of the width of images. 
 
-For most purposes something like this will work for a web page display. 
+For most purposes something like this will work for a web page display. To exclude the code chunk that you see below change `echo = TRUE` to `echo = FALSE`. That will display the image but not the code chunk. 
 
 ```{r echo = TRUE, out.width = "50%", fig.align = "center"}
 knitr::include_graphics("images/fig31_adjust_nodes.png")

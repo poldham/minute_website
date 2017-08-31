@@ -9,9 +9,10 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Paul Oldham" />
 
 
-<title>Include Images</title>
+<title>Understanding Site Structure</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -241,28 +242,85 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Include Images</h1>
+<h1 class="title toc-ignore">Understanding Site Structure</h1>
+<h4 class="author"><em>Paul Oldham</em></h4>
+<h4 class="date"><em>30/08/2017</em></h4>
 
 </div>
 
 
-<p>Including an image using <code>rmarkdown</code> is easy.</p>
-<p>In the files pane in RStudio choose <code>New Folder</code> (or create one in your Finder in the Rproject folder). Call it say <code>images</code>.</p>
-<p>To reference an image in rmarkdown use the following.</p>
-<p><code>![](images/yourimagename.png)</code></p>
-<p>Here is an example of a network visual created in <a href="https://gephi.org">Gephi</a> and saved in <code>images</code>.</p>
-<div class="figure">
-<img src="images/fig31_adjust_nodes.png" />
-
+<p>In RStudio web pages are built from the Rmarkdown (.Rmd) files. So,</p>
+<ul>
+<li>index.Rmd becomes index.html</li>
+<li>writepage.Rmd becomes writepage.html</li>
+</ul>
+<p>When we use the Build button, the rmarkdown files are converted to html. Those html files become the pages of the website in the site structure.</p>
+<p>The structure of the site is contained in the file <code>_site.yml</code>. It looks like this.</p>
+<pre class="r"><code>name: &quot;Create a simple Rmarkdown website&quot;
+output:
+  html_document:
+    theme: cosmo
+    #highlight: textmate
+navbar:
+  left:
+    - text: &quot;Home&quot;
+      href: index.html
+    - text: &quot;Next Steps&quot;
+      menu: 
+        - text: &quot;Writing Pages&quot;
+          href: writepage.html 
+        - text: &quot;Include Images&quot;
+          href: images.html
+        - text: &quot;Embed a webpage&quot;
+          href: embed.html
+        - text: &quot;Embed an infographic&quot;
+          href: info.html
+    - text: &quot;Change the Structure&quot;   
+      menu:
+        - text: &quot;Site structure&quot;
+          href: structure.html
+    - text: &quot;Publish to Github&quot;      
+      menu: 
+        - text: &quot;publish&quot;
+          href: publish.html
+        - text: &quot;submenu item&quot;
+          href: yourfile.html
+output_dir: &quot;.&quot;</code></pre>
+<div id="the-basics" class="section level3">
+<h3>The basics</h3>
+<p>The site structure starts with the name of the site. Then we have the output as html_document and a theme. For available themes see the <a href="http://rmarkdown.rstudio.com/html_document_format.html">RStudio</a> websites section. You can also choose the text highlight option (commented out with # here).</p>
+<p>Next comes location of the navigation bar.</p>
 </div>
-<div id="sizing-images" class="section level2">
-<h2>Sizing images</h2>
-<p>There are a number of ways of sizing images using the <code>knitr</code> package. One of the simplest is to size images in R code chunks.</p>
-<p>To inserta code chunk use <code>Ctrl Alt I</code> on Windows or <code>Cmd I</code> on a Mac.</p>
-<p>In the code chunk heading we could specify the width of a figure as percentages and we might also want to centre the figure <code>{r out.width = &quot;50%&quot;, fig.align = &quot;center&quot;}</code>. We would then include a call to <code>knitr::include_graphics()</code> with our image address in quotes as below. Note that the knitr documentation specifies that you may need to <code>install.packages(&quot;png&quot;)</code> and <code>install.packages(&quot;jpeg&quot;)</code> for automatic calculation of the width of images.</p>
-<p>For most purposes something like this will work for a web page display. To exclude the code chunk that you see below change <code>echo = TRUE</code> to <code>echo = FALSE</code>. That will display the image but not the code chunk.</p>
-<pre class="r"><code>knitr::include_graphics(&quot;images/fig31_adjust_nodes.png&quot;)</code></pre>
-<p><img src="images/fig31_adjust_nodes.png" width="50%" style="display: block; margin: auto;" /></p>
+<div id="the-index-file" class="section level3">
+<h3>The index file</h3>
+<p>All websites must have an index file. In this case the <code>- text:</code> provides the instruction on what to call the menu item <code>&quot;Home&quot;</code>. Below that we have the reference to the html file that corresponds with home. To build a website on GitHub you must have an index file, so this goes here.</p>
+<p>An important point here is that the indents matter. If they are slightly out the site will create an error or not display properly. Use the tab key to make sure things are properly aligned.</p>
+<pre class="r"><code>- text: &quot;Home&quot;
+  href: index.html</code></pre>
+</div>
+<div id="menus-and-sub-menus" class="section level3">
+<h3>Menus and sub menus</h3>
+<p>To create sub-menus on the navigation bar we start by giving the text that we want to see in the menu. Next we specify that this is a menu and then indent the pages that appear under the menu with text and href.</p>
+<pre class="r"><code>- text: &quot;Next Steps&quot;
+      menu: 
+        - text: &quot;Writing Pages&quot;
+          href: mypage.html 
+        - text: &quot;Include Images&quot;
+          href: images.html
+        - text: &quot;Embed a webpage&quot;
+          href: embed.html
+        - text: &quot;Embed an infographic&quot;
+          href: info.html</code></pre>
+<p>If we want a new sub-menu we simply repeat the above with the relevant titles and links to the html files.</p>
+<p>The most important things to remember here are:</p>
+<ul>
+<li>The indents above really matter. If the site will not build it is probably because the indents of - text and href are not aligned.</li>
+<li>The file names matter. If the markdown file is called info1 it will rended as info1.html. If you put info.html into the structure then the <code>_site.yml</code> will not find info1.html and that will cause a problem.</li>
+</ul>
+</div>
+<div id="output_dir" class="section level2">
+<h2>output_dir</h2>
+<p>This is set to “.” if you want to publish the site on GitHub. For other options see the <a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html#publishing_websites">Publishing Websites</a> section of the RStudio guide.</p>
 </div>
 
 

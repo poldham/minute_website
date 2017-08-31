@@ -1,0 +1,28 @@
+---
+title: "Writing a Web Page"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Web pages are written in Rmarkdown. This is basically a text file that allows  you to include images and R code chunks. The main things you need to know to write a document are:
+
+1. Use `#` to create headings. 
+
+# This is my big heading ` write: # This is my big heading`
+## This is my medium heading `write: ## This is my medium heading`
+### This is my small heading `write: ### This is my small heading`
+
+2. Useful markup
+
+- I am a bullet point `write: - I am a bullet point`
+- *I am in italics* `write: *I am in italics*`
+- **I am in bold** `write: **I am in bold**`
+
+3. Links
+
+[Google](https://www.google.com) `write: [Google](https://www.google.com)`
+
+Using this simple markup you can write most web pages. For images and embedding see the next pages. 

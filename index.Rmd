@@ -7,14 +7,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-1. Got to Build > Configure Build Tools. In Project Build Tools choose `Website` in the Menu. Press OK. 
+It is very very easy to create a nice static website using RStudio.
 
-2. Copy and paste the the following line of code into the console and press ENTER to build the website. 
+This document will take you through how to create your own static website and publish it on Github. You can use this website as a template to develop your own. 
 
-```{r eval=FALSE}
-rmarkdown::render_site()
-```
+### Getting Started
 
-To edit the website open the file called `_site.yml`
+1. Got to the online [Github repository](https://github.com/poldham/minute_website). Choose `Fork` to create your own copy in your Github account and then choose the large green `Clone` button to download into Github Desktop. 
 
+2. In Github desktop look for the file called `minute_website.Rproj` with the blue R icon. Open it in RStudio.
+
+3. Press `Build` to build this website.
+
+4. Go to `Next Steps` in the menu.
 

@@ -11,7 +11,7 @@
 
 
 
-<title>Include Images</title>
+<title>Writing a Web Page</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -241,28 +241,36 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Include Images</h1>
+<h1 class="title toc-ignore">Writing a Web Page</h1>
 
 </div>
 
 
-<p>Including an image using <code>rmarkdown</code> is easy.</p>
-<p>In the files pane in RStudio choose <code>New Folder</code> (or create one in your Finder in the Rproject folder). Call it say <code>images</code>.</p>
-<p>To reference an image in rmarkdown use the following.</p>
-<p><code>![](images/yourimagename.png)</code></p>
-<p>Here is an example of a network visual created in <a href="https://gephi.org">Gephi</a> and saved in <code>images</code>.</p>
-<div class="figure">
-<img src="images/fig31_adjust_nodes.png" />
-
+<p>Web pages are written in Rmarkdown. This is basically a text file that allows you to include images and R code chunks. The main things you need to know to write a document are:</p>
+<ol style="list-style-type: decimal">
+<li>Use <code>#</code> to create headings.</li>
+</ol>
+<div id="this-is-my-big-heading-write-this-is-my-big-heading" class="section level1">
+<h1>This is my big heading <code>write: # This is my big heading</code></h1>
+<div id="this-is-my-medium-heading-write-this-is-my-medium-heading" class="section level2">
+<h2>This is my medium heading <code>write: ## This is my medium heading</code></h2>
+<div id="this-is-my-small-heading-write-this-is-my-small-heading" class="section level3">
+<h3>This is my small heading <code>write: ### This is my small heading</code></h3>
+<ol start="2" style="list-style-type: decimal">
+<li>Useful markup</li>
+</ol>
+<ul>
+<li>I am a bullet point <code>write: - I am a bullet point</code></li>
+<li><em>I am in italics</em> <code>write: *I am in italics*</code></li>
+<li><strong>I am in bold</strong> <code>write: **I am in bold**</code></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Links</li>
+</ol>
+<p><a href="https://www.google.com">Google</a> <code>write: [Google](https://www.google.com)</code></p>
+<p>Using this simple markup you can write most web pages. For images and embedding see the next pages.</p>
 </div>
-<div id="sizing-images" class="section level2">
-<h2>Sizing images</h2>
-<p>There are a number of ways of sizing images using the <code>knitr</code> package. One of the simplest is to size images in R code chunks.</p>
-<p>To inserta code chunk use <code>Ctrl Alt I</code> on Windows or <code>Cmd I</code> on a Mac.</p>
-<p>In the code chunk heading we could specify the width of a figure as percentages and we might also want to centre the figure <code>{r out.width = &quot;50%&quot;, fig.align = &quot;center&quot;}</code>. We would then include a call to <code>knitr::include_graphics()</code> with our image address in quotes as below. Note that the knitr documentation specifies that you may need to <code>install.packages(&quot;png&quot;)</code> and <code>install.packages(&quot;jpeg&quot;)</code> for automatic calculation of the width of images.</p>
-<p>For most purposes something like this will work for a web page display. To exclude the code chunk that you see below change <code>echo = TRUE</code> to <code>echo = FALSE</code>. That will display the image but not the code chunk.</p>
-<pre class="r"><code>knitr::include_graphics(&quot;images/fig31_adjust_nodes.png&quot;)</code></pre>
-<p><img src="images/fig31_adjust_nodes.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
 </div>
 
 

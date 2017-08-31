@@ -7,22 +7,26 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Read Me"
+    - text: "Next Steps"
       menu: 
+        - text: "Writing Pages"
+          href: writepage.html 
         - text: "Include Images"
           href: images.html
         - text: "Embed a webpage"
           href: embed.html
         - text: "Embed an infographic"
           href: info.html
-    - text: "My Webpage"
-      href: mypage.html   
-    - text: "Tableau Session"
-      href: tableau.html
+    - text: "Change the Structure"   
+      menu:
+        - text: "Site structure"
+          href: structure.html
     - text: "Publish to Github"      
       menu: 
         - text: "publish"
           href: publish.html
         - text: "submenu item"
           href: yourfile.html
+    - text: "Resources"
+      href: resources.html
 output_dir: "."

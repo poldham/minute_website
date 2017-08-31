@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -19,12 +19,11 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="site_libs/highlight/default.css"
-      type="text/css" />
-<script src="site_libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -151,7 +150,6 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -182,11 +180,14 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Read Me
+    Next Steps
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="writepage.html">Writing Pages</a>
+    </li>
     <li>
       <a href="images.html">Include Images</a>
     </li>
@@ -198,11 +199,17 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li>
-  <a href="mypage.html">My Webpage</a>
-</li>
-<li>
-  <a href="tableau.html">Tableau Session</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Change the Structure
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="structure.html">Site structure</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -218,6 +225,9 @@ $(document).ready(function () {
       <a href="yourfile.html">submenu item</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -236,12 +246,17 @@ $(document).ready(function () {
 </div>
 
 
+<p>It is very very easy to create a nice static website using RStudio.</p>
+<p>This document will take you through how to create your own static website and publish it on Github. You can use this website as a template to develop your own.</p>
+<div id="getting-started" class="section level3">
+<h3>Getting Started</h3>
 <ol style="list-style-type: decimal">
-<li><p>Got to Build &gt; Configure Build Tools. In Project Build Tools choose <code>Website</code> in the Menu. Press OK.</p></li>
-<li><p>Copy and paste the the following line of code into the console and press ENTER to build the website.</p></li>
+<li><p>Got to the online <a href="https://github.com/poldham/minute_website">Github repository</a>. Choose <code>Fork</code> to create your own copy in your Github account and then choose the large green <code>Clone</code> button to download into Github Desktop.</p></li>
+<li><p>In Github desktop look for the file called <code>minute_website.Rproj</code> with the blue R icon. Open it in RStudio.</p></li>
+<li><p>Press <code>Build</code> to build this website.</p></li>
+<li><p>Go to <code>Next Steps</code> in the menu.</p></li>
 </ol>
-<pre class="r"><code>rmarkdown::render_site()</code></pre>
-<p>To edit the website open the file called <code>_site.yml</code></p>
+</div>
 
 
 
@@ -251,8 +266,11 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
 
 
@@ -263,7 +281,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
